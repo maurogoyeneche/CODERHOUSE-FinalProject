@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Automotora dedicada a la venta de los mejores autos del mercado - Nuevos y Usados">
+  <meta name="author" content="Automotora VIP">
+
+  <title>Mi Proyecto Final CODER HOUSE - JavaScript</title>
+
+  <!-- CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+  <!-- CSS Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+  <!-- CSS Propio -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body id="body">
+
+  <nav id="header" class="navbar sticky-top navbar-dark">
+    <a class="navbar-brand" href="index.html">
+      <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block align-top" alt="Soni plai steishon">
+    </a>
+    <a href="#carrito" class="nav-link">
+      <button id="cart-btn" class="btn btn-md "><i class="fab fa-opencart"></i></button>
+    </a>
+  </nav>
+
+  <div id="search-section" class="container ">
+    <div id="form-search" class="form-group">
+      <form id="form-submit" action="">
+      <input type="text" id="input-search" class="form-control" aria-describedby="buscador"
+        placeholder="Ingrese el producto">
+      <button id="search-btn" type="submit" class="btn btn-dark btn-md btn-block" value="""><i class="fas fa-search"></i> BUSCAR</button>
+      </form>
+    </div>
+    <p>Se han encontrado <span><strong></strong></span> búsquedas relacionadas con: <strong><span id="search-key">
+        </span></strong> </p>
+  </div>
+
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div id="products-container" class="row ">
+
+          <!-- AQUI IRIAN LOS PRODUCTOS -->
+          
+        </div>
+
+      </div>
+
+      <div id="cart" class="col-md-3" >
+      
+        <div class="card" >
+          <section id="carrito">
+            <div class="card-body">
+              <h5  id="alert-text" class=" cart-title" style="text-align: right;"><i class="fab fa-opencart"></i></h5><br>
+              <ul id="order-container" style="font-size: 12px;">
+                 <!-- Aqui irian llenaríamos el carrito de productosval irvclickeando-->
+              </ul>
+              <p id="btn-box" class="card-text">
+              <form action="">
+                <button id="btn-eraser" type="button" class="btn btn-outline-info btn-block btn-sm">Vaciar
+                  Carrito</button>
+                <button id="btn-buy" type="button" class="btn btn-dark  btn-block btn-sm ">Comprar</button>
+                <p style="font-size: 8px; padding: 0; margin-top: 10px; margin-bottom: 0;">Ingrese su CUPÓN DE DESCUENTO
+                </p>
+                <input type="text" id="discount-key" class="input-group input-group-sm mb-3"
+                  style="margin: 0px, 0px, 0px, 0px; padding: 0;" value="">
+              </form>
+              <div class="card-text" id="total-order-price">
+                <!-- aqui va el precio total -->
+              </div>
+              
+              </p>
+            </div>
+
+          </section>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalDescription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="hackerDiv" class="">
+          <div id="card-product" class="card m-1 ">
+              <!-- <img src="${product.img}" id="img-modal" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                  <h5 id="title-modal" class="card-title title-modal">${product.productName}</h5>
+                  <p id="model-modal" class="card-text model-modal">${product.model}</p>
+                  <p id="firstDescription-modal" class="card-text firstDescription-modal">${product.firstDescription}</p>
+                  <p id="secondDescription-modal" class="card-text secondDescription-modal">${product.secondDescription}</p>
+                  <p class="price-modal"><span class="dolar-price price-modal">USD <span class="dolar-price">${product.price}</span> </span> </p>
+                  <p id="card-txt" class="card-text">
+                    <!-- Button Add to Cart -->
+                    <button id="add-to-cart" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
+                  <!-- Button trigger modal -->
+                      <button id="btn-modal" type="button" class="btn btn-red btn-block btn-sm" data-dismiss="modal">Cerrar</button>
+                  
+                  </p>
+              </div>
+          </div>
+      </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- JQuery extras-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
+
+  <!-- JS de Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <!-- JS de Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- JS de Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <!-- JS Personal -->
+  <!-- <script defer src="assets/js/app.js"> </script> -->
+  <script defer src="assets/js/main.js"> </script>
+  <script defer src="assets/js/data.js"> </script>
+  <!-- <script defer src="assets/js/products.js"> </script> -->
+  <!-- <script defer src="assets/js/ShoppingCart.js"> </script> -->
+
+
+
+<!-- modal -->
+
+</body>
+
+</html>

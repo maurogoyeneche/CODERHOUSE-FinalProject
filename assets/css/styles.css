@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    font: arial 'sans serif';
+
+}
+#content{
+    margin: auto;
+    align-content: center;
+    padding: 20px;;
+}
+#header{
+    background-color: black ;
+    padding: 0;
+    margin-bottom: 30px;;
+}
+
+#header-logo{
+    width: 200px;
+    padding: 0;
+}
+#search-section{
+    padding: 5px;;
+}
+#search-btn{
+    border-radius: 5px;
+    margin-top: 5px;
+
+    font-size: 12px;
+}
+#input-bar{
+    width: 100%;
+    align-content: center;
+}
+#input-search{
+    text-align: center;
+}
+#hackerDiv{
+margin-bottom: 10px !important;
+padding: 0;
+
+}
+#card-product{
+height: 100%;
+
+margin: 2;
+
+padding: 0 ;
+}
+#cart-btn{
+
+    font-size: 20px;
+ 
+}
+/* #cart{
+  position: fixed;
+  right:  10px;
+padding: 10;
+
+} */
+#btn-eraser{
+    transition: all .5s ease-in-out;
+}
+#btn-eraser:hover{
+    background: rgba(0, 0, 0, 0.719) !important;
+    color: whitesmoke !important;
+    border-color: rgba(0, 0, 0, 0.144) !important;
+}
+#img-cart{
+    justify-items: center;
+    width: 20%;
+    
+}
+#btn-eraser{
+    margin: 5px auto;
+    bottom: auto;
+}
+#btn-box{
+align-items: baseline;
+}   
+#btn{
+    margin-bottom: 5px;  
+} 
+#btn-modal{
+    margin-top: 5px;  
+} 
+
+
+@media  only screen and (max-width: 767px) {
+    .cart{
+        position:unset !important;
+    }
+}
+@media  only screen and (min-width: 767px) {
+    #cart-btn{
+        display: none !important;
+    }
+}
