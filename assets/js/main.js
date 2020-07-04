@@ -75,16 +75,16 @@ function showOrder(){
     var total = 0;
     order.forEach(function(order, index){
         orderContainer.append(`
-                        <li class="">
-                            <div class="row">
-                                <div class="col-md-10"> ${order.productName}  U$s${order.price} </div>
-                                <div class="col-md-2"><button type="button" id="${index} class="close btn-delete" aria-label="Close" data-id="${index}"><span aria-hidden="true">&times;</span></button></div>
-                            </div>
-                        </li>
+                <li class="item">
+                    <div class="row">
+                        <div class="col-10"> ${order.productName}  U$s${order.price} </div>
+                        <div class="col-2"><button type="button" id="${index}" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+                    </div>
+                </li>
         `)
         total = total + order.price;
         totalOrderPrice.empty();
-        totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`);  
+        totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
     })
     //borrar  elementos por su id de la lista de orders.  event.target = this
     $('.close').click(function () {
@@ -92,6 +92,7 @@ function showOrder(){
         $(this).parent().parent().parent().remove()
         order.splice(indice,1)
         localStorage.setItem('order', JSON.stringify(order));
+        
     })
 }
 
@@ -152,6 +153,23 @@ function searchKeyValue(key) {
 
 
 $(document).ready(() => {
+
+        $.ajax({
+            method: 'GET',
+            url: "assets/js/data.json",
+            dataType: 'json',
+        }).done( function(result){
+            // recibe el resultado y lo muestra en un elemento p
+            showProducts(result);
+            }).fail( function(){
+            console.log('no ajax');
+        })
+      
+    
+    
+
+
+
     titleModal = $('.title-modal');
     productsContainer = $('#products-container');
     orderContainer = $('#order-container');
@@ -166,11 +184,23 @@ $(document).ready(() => {
         event.preventDefault();
         getInputSearchValue();
     })
-
+    $("#input-search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        productsContainer.filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
 
 
  
 //  showModal(); 
+
+
+
+   
+
+   
+
 })
 
 
@@ -195,23 +225,28 @@ function mostrarOK(texto) {
 
 
 ///////
-function showOrder(){
-    order = (localStorage.getItem('order')) ? JSON.parse(localStorage.getItem('order')) : [];
-    orderContainer.empty();
-    order.forEach(function(order, index){
-        orderContainer.append(`
-                <li class="item">
-                    <div class="row">
-                        <div class="col-10"> ${order.productName}  U$s${order.price} </div>
-                        <div class="col-2"><button type="button" id="${index}" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-                    </div>
-                </li>
-        `)
-    })
-    $('.close').click(function () {
-        let indice = $(this).attr('id')
-        $(this).parent().parent().parent().remove()
-        order.splice(indice,1)
-        localStorage.setItem('order', JSON.stringify(order));
-    })
-}
+// function showOrder(){
+//     order = (localStorage.getItem('order')) ? JSON.parse(localStorage.getItem('order')) : [];
+//     orderContainer.empty();
+//     order.forEach(function(order, index){
+//         orderContainer.append(`
+//                 <li class="item">
+//                     <div class="row">
+//                         <div class="col-10"> ${order.productName}  U$s${order.price} </div>
+//                         <div class="col-2"><button type="button" id="${index}" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+//                     </div>
+//                 </li>
+//         `)
+//         total = total + order.price;
+//         totalOrderPrice.empty();
+//         totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
+//     })
+//     $('.close').click(function () {
+//         let indice = $(this).attr('id')
+//         $(this).parent().parent().parent().remove()
+//         order.splice(indice,1)
+//         localStorage.setItem('order', JSON.stringify(order));
+//     })
+// }
+
+
