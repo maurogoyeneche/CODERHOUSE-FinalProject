@@ -105,7 +105,7 @@ $('#btn-eraser').click(function(){
 
 
 
-function showProducts() {
+function showProducts(products) {
     products.forEach(function(product, index){
         productsContainer.append(`
                     <div id="hackerDiv" class="col-md-4 ;">
@@ -135,9 +135,6 @@ function showProducts() {
     })
     
 }
-
-
-
 //obtener valor deL buscador
 function getInputSearchValue() {
     var inputSearchValue = inputSearch.val();
@@ -158,22 +155,19 @@ $(document).ready(() => {
             method: 'GET',
             url: "assets/js/data.json",
             dataType: 'json',
-        }).done( function(result){
+        }).done( function(products){
             // recibe el resultado y lo muestra en un elemento p
-            showProducts(result);
+            showProducts(products);
+
             }).fail( function(){
             console.log('no ajax');
         })
       
-    
-    
-
-
 
     titleModal = $('.title-modal');
     productsContainer = $('#products-container');
     orderContainer = $('#order-container');
-    showProducts();
+    // showProducts();
     totalOrderPrice = $('#total-order-price');
     showOrder();
 
