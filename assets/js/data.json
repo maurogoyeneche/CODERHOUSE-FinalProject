@@ -1,0 +1,56 @@
+[
+    {
+       "id":1,
+       "productName":"Play Station 5",
+       "model":"OVNI",
+       "firstDescription":"Tecnología Anti Gravity - VR",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eligendi, enim quod a rerum rem natus neque. Optio aliquid soluta nulla sed quaerat blanditiis veritatis molestias, delectus ullam, eaque officiis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":20325,
+       "img":"assets/img/ps5-lanzamiento.jpg"
+    },
+    {
+       "id":2,
+       "productName":"Play Station 4",
+       "model":"SNOW",
+       "firstDescription":"Tecnología  White Anti Gravity - VR",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":16325,
+       "img":"assets/img/ps5_7.jpg"
+    },
+    {
+       "id":3,
+       "productName":"Play Station 5",
+       "model":"SPACE",
+       "firstDescription":"Tecnología Responsive Anti Gravity - VR",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":26325,
+       "img":"assets/img/ps5_3.jpg"
+    },
+    {
+       "id":4,
+       "productName":"Play Station 5",
+       "model":"CLASSIC",
+       "firstDescription":"camera VR integrada",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":30225,
+       "img":"assets/img/ps5_8.jpg"
+    },
+    {
+       "id":5,
+       "productName":"JoyStick PS5",
+       "model":"Touch",
+       "firstDescription":"Retina Touch pad integrada - VR",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":26025,
+       "img":"assets/img/joystick_ps5.jpg"
+    },
+    {
+       "id":6,
+       "productName":"Play Station 5",
+       "model":"SQUARE",
+       "firstDescription":"Unbreakable - VR",
+       "secondDescription":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
+       "price":22325,
+       "img":"assets/img/ps5_6.jpg"
+    }
+ ]
