@@ -36,12 +36,13 @@ function renderProducts(product, index){
                                         <p id="model-modal" class="card-text model-modal">${product.model}</p>
                                         <p id="firstDescription-modal" class="card-text firstDescription-modal">${product.firstDescription}</p>
                                         <p id="secondDescription-modal" class="card-text secondDescription-modal">${product.secondDescription}</p>
-                                        <p class="price-modal"><span class="dolar-price price-modal">USD <span class="dolar-price">${product.price}</span> </span> </p>
+                                        <p id="alert-text" class="price-modal"><span class="dolar-price price-modal">USD <span class="dolar-price">${product.price}</span> </span> </p>
                                         <p id="card-txt" class="card-text">
                                             <!-- Button Add to Cart -->
-                                            <button id="add-to-cart" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
+                                            <button id="add-to-cart" onclick="mostrarOk()" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
                                         <!-- Button trigger modal -->
                                             <button id="btn-modal" type="button" class="btn btn-red btn-block btn-sm" data-dismiss="modal">Cerrar</button>
+                                            <p  class="alert" ></p>
                                         
                                         </p>
                                     </div>
