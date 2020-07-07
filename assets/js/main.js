@@ -1,68 +1,14 @@
 var inputSearchValue;
-// var products = [
-//     {
-//         id: 0,
-//         productName: "Play Station 5", 
-//         model: "OVNI", 
-//         firstDescription: "Tecnología Anti Gravity - VR",
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ", 
-//         price: 20325,
-//         img: "assets/img/ps5-lanzamiento.jpg"
-//     },
-//     {
-//         id: 1, 
-//         productName: "Play Station 5", 
-//         model: "SNOW", 
-//         firstDescription: "Tecnología  White Anti Gravity - VR", 
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
-//         price: 16325,
-//         img: "assets/img/ps5_7.jpg"
-//     },
-//     {
-//         id: 2, 
-//         productName: "Play Station 5", 
-//         model: "SPACE", 
-//         firstDescription: "Tecnología Responsive Anti Gravity - VR", 
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
-//         price: 26325,
-//         img: "assets/img/ps5_3.jpg"
-//     },
-//     {
-//         id: 3, 
-//         productName: "Play Station 5", 
-//         model: "CLASSIC", 
-//         firstDescription: "camera VR integrada", 
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
-//         price: 30225,
-//         img: "assets/img/ps5_8.jpg"
-//     },
-//     {
-//         id: 4, 
-//         productName: "JoyStick PS5", 
-//         model: "Touch", 
-//         firstDescription: "Retina Touch pad integrada - VR", 
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
-//         price: 26025,
-//         img: "assets/img/joystick_ps5.jpg"
-//     },
-//     {
-//         id: 5, 
-//         productName: "Play Station 5", 
-//         model: "SQUARE", 
-//         firstDescription: "Unbreakable - VR", 
-//         secondDescription:  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iste beatae sequi vero assumenda in. ",
-//         price: 22325,
-//         img: "assets/img/ps5_6.jpg"
-//     }
-// ]
+
 var order = [];
+// agrega las ordenes al carrito
 function addOrder(index){
     order.push(products[index]);
     localStorage.setItem('order', JSON.stringify(order));
     showOrder();
     mostrarOK("El producto se agregó al carrito");
 }
-
+//renderizar las ordenes en el carrito
 function showOrder(){
     order = (localStorage.getItem('order')) ? JSON.parse(localStorage.getItem('order')) : [];
     totalOrderPrice.show('slow');
@@ -98,10 +44,11 @@ function showOrder(){
         totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
     })
 }
+//boton de vaciar el carrito
 $('#btn-destroyCart').click(function(){
     orderContainer.empty();
     order = [];
-    totalOrderPrice.empty();
+    totalOrderPrice.empty().hide('slow');
     localStorage.clear()
 })
 // Funcion que llama a renderProducts.js para inyectar el html de productos y el modal
@@ -157,7 +104,7 @@ $(document).ready(() => {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
       });
-//  showModal(); 
+
 })
 // Mostrar mensaje de Ã©️xito:
 function mostrarOK(texto) {
@@ -165,7 +112,7 @@ function mostrarOK(texto) {
     $(".alert").alert('close').fadeIn();     
     setTimeout(function() {
          $(".alert").fadeOut();           
-    },400);;
+    },500);;
     var html_alert = "";
     html_alert += '<div class="alert alert-success alert-dismissible" role="alert">';
     html_alert += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
@@ -174,27 +121,3 @@ function mostrarOK(texto) {
     // Mostrar alert luego del #content:
     $("#alert-text").after(html_alert);
 }
-///////
-// function showOrder(){
-//     order = (localStorage.getItem('order')) ? JSON.parse(localStorage.getItem('order')) : [];
-//     orderContainer.empty();
-//     order.forEach(function(order, index){
-//         orderContainer.append(`
-//                 <li class="item">
-//                     <div class="row">
-//                         <div class="col-10"> ${order.productName}  U$s${order.price} </div>
-//                         <div class="col-2"><button type="button" id="${index}" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-//                     </div>
-//                 </li>
-//         `)
-//         total = total + order.price;
-//         totalOrderPrice.empty();
-//         totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
-//     })
-//     $('.close').click(function () {
-//         let indice = $(this).attr('id')
-//         $(this).parent().parent().parent().remove()
-//         order.splice(indice,1)
-//         localStorage.setItem('order', JSON.stringify(order));
-//     })
-// }
