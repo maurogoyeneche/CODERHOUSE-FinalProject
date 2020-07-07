@@ -3,6 +3,9 @@ body{
     font: arial 'sans serif';
 
 }
+
+
+
 #content{
     margin: auto;
     align-content: center;
@@ -57,10 +60,12 @@ padding: 0 ;
 padding: 10;
 
 } */
-#btn-eraser{
+#btn-destroyCart{
     transition: all .5s ease-in-out;
+    margin: 5px auto;
+    bottom: auto;
 }
-#btn-eraser:hover{
+#btn-destroyCart:hover{
     background: rgba(0, 0, 0, 0.719) !important;
     color: whitesmoke !important;
     border-color: rgba(0, 0, 0, 0.144) !important;
@@ -70,16 +75,20 @@ padding: 10;
     width: 20%;
     
 }
-#btn-eraser{
+#btn-destroyCart{
     margin: 5px auto;
     bottom: auto;
 }
 #btn-box{
 align-items: baseline;
 }   
-#btn{
+.btnInfo{
     margin-bottom: 5px;  
 } 
+.add-to-cart{
+    margin-top: 5px !important;
+
+}
 #btn-modal{
     margin-top: 5px;  
 } 
