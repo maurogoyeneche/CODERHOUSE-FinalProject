@@ -60,6 +60,7 @@ function addOrder(index){
     order.push(products[index]);
     localStorage.setItem('order', JSON.stringify(order));
     showOrder();
+    mostrarOK("El producto se agregó al carrito");
 }
 
 function showOrder(){
@@ -161,10 +162,13 @@ $(document).ready(() => {
 // Mostrar mensaje de Ã©️xito:
 function mostrarOK(texto) {
     // Por las dudas, cerrar alert previo:
-    $(".alert").alert('close');
+    $(".alert").alert('close').fadeIn();     
+    setTimeout(function() {
+         $(".alert").fadeOut();           
+    },400);;
     var html_alert = "";
     html_alert += '<div class="alert alert-success alert-dismissible" role="alert">';
-    html_alert += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">Ã—</span></button>';
+    html_alert += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
     html_alert += texto;
     html_alert += '</div>';
     // Mostrar alert luego del #content:
