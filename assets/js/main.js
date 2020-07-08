@@ -1,4 +1,5 @@
 var inputSearchValue;
+var products;
 
 var order = [];
 function addOrder(index){
@@ -60,7 +61,6 @@ function showProducts(products) {
     btnAddToCart.click(function(event){
         var indexSelection = $(event.target).data("id");
         addOrder(indexSelection);
-        mostrarOk("Se agregó el item al carrito");
     })
 }
 
@@ -82,18 +82,19 @@ $(document).ready(() => {
             method: 'GET',
             url: "assets/js/data.json",
             dataType: 'json',
-        }).done( function(products){
+        }).done( function(response){
             // recibe el resultado y lo muestra en un elemento p
+            products = response;
             showProducts(products);
             }).fail( function(){
-            console.log('no ajax');
+            console.log('el llamado ajax falló');
         })
 
     productsContainer = $('#products-container');
     orderContainer = $('#order-container');
     totalOrderPrice = $('#total-order-price');
     showOrder();
-
+    mostrarOK();
     inputSearch = $('#input-search');
     //evito que el form me haga submit por defecto
     formSearchValue = $('#form-submit');
