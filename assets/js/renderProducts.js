@@ -9,7 +9,7 @@ function renderProducts(product, index){
                             <p class="price"><span class="dolar-price">USD <span class="dolar-price">${product.price}</span> </span> </p>
                             <p id="card-txt" class="card-text">
                             <!-- Button trigger modal -->
-                                <button id="btn" type="button" class="btn btn-info btn-block btn-sm" data-toggle="modal" data-target="#modalDescription">+ Info</button>
+                                <button id="btn" type="button" class="btn btn-info btn-block btn-sm" data-toggle="modal"  data-target="#${product.model}">+ Info</button>
                             <!-- Button Add to Cart -->
                                 <button id="add-to-cart" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
                             </p>
@@ -18,7 +18,7 @@ function renderProducts(product, index){
                 </div>  
     
                     <!-- Modal -->
-                        <div class="modal fade" id="modalDescription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="${product.model}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
@@ -36,15 +36,14 @@ function renderProducts(product, index){
                                         <p id="model-modal" class="card-text model-modal">${product.model}</p>
                                         <p id="firstDescription-modal" class="card-text firstDescription-modal">${product.firstDescription}</p>
                                         <p id="secondDescription-modal" class="card-text secondDescription-modal">${product.secondDescription}</p>
-                                        <p id="alert-text" class="price-modal"><span class="dolar-price price-modal">USD <span class="dolar-price">${product.price}</span> </span> </p>
+                                        <p  id="" class="price-modal alert-text"><span class="dolar-price price-modal">USD <span class="dolar-price">${product.price}</span> </span> </p>
                                         <p id="card-txt" class="card-text">
                                             <!-- Button Add to Cart -->
-                                            <button id="add-to-cart" onclick="mostrarOk()" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
+                                            <button id="add-to-cart" type="button" class="btn btn-dark btn-block btn-sm add-to-cart" data-id="${index}">Agregar al Carrito +</button>
                                         <!-- Button trigger modal -->
                                             <button id="btn-modal" type="button" class="btn btn-red btn-block btn-sm" data-dismiss="modal">Cerrar</button>
-                                            <p  class="alert" ></p>
-                                        
                                         </p>
+                                        <p class="alert"></p>
                                     </div>
                                 </div>
                             </div> 
