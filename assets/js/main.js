@@ -1,6 +1,7 @@
 var inputSearchValue;
 var products;
-
+var inputSearchValue;
+var searchKey;
 var order = [];
 function addOrder(index){
     order.push(products[index]);
@@ -64,18 +65,6 @@ function showProducts(products) {
     })
 }
 
-//obtener valor deL buscador
-function getInputSearchValue() {
-    var inputSearchValue = inputSearch.val();
-    if (inputSearchValue.trim() !== '') {
-        searchKeyValue(inputSearchValue);
-    }
-}
-//INSERTAR EL VALOR DEL BUSCADOR EN EL HTML
-function searchKeyValue(key) {
-    var searchKey = $('#search-key');
-    searchKey.html(key);
-}
 //inicio del documento
 $(document).ready(() => {
         $.ajax({
@@ -94,27 +83,20 @@ $(document).ready(() => {
     orderContainer = $('#order-container');
     totalOrderPrice = $('#total-order-price');
     showOrder();
-    mostrarOK();
-    inputSearch = $('#input-search');
+    // mostrarOK();
+    
     //evito que el form me haga submit por defecto
     formSearchValue = $('#form-submit');
     formSearchValue.on('submit', function(event){
         event.preventDefault();
     getInputSearchValue();
     })
-    //filtro
-    $("#input-search").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        productsContainer.filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-      });
 
 })
 // Mostrar mensaje de Ã©️xito:
 function mostrarOK(texto) {
     // Por las dudas, cerrar alert previo:
-    $(".alert").alert('close').fadeIn();     
+    $(".alert").alert('close') 
     setTimeout(function() {
          $(".alert").fadeOut();           
     },400);;
@@ -126,3 +108,38 @@ function mostrarOK(texto) {
     // Mostrar alert luego del #content:
     $(".alert-text").after(html_alert);
 }
+
+
+//testting filters
+inputSearch = $('#input-search');
+//obtener valor deL buscador
+function getInputSearchValue() {
+    var inputSearchValue = search(inputSearch.val());
+    if (inputSearchValue == inputSearch.val()) {
+       return searchKeyValue(inputSearch);
+    }
+
+}
+// INSERTAR EL VALOR DEL BUSCADOR EN EL HTML
+function searchKeyValue(key) {
+    var searchKey = $('#search-key');
+    searchKey.html(key);
+   
+}
+
+function search(key) {
+    results = [];
+    products.forEach((product) => {
+        if(product.productName.toLowerCase().includes(key.toLowerCase()) || product.model.toLowerCase().includes(key.toLowerCase())){
+            results.push(product);
+        }
+    });
+    productsContainer.empty()
+    
+    return  showProducts(results);
+  
+    
+}
+
+
+
