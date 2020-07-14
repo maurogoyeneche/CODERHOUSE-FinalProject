@@ -10,6 +10,7 @@ function addOrder(index){
     localStorage.setItem('order', JSON.stringify(order));
     showOrder();
     mostrarOK("Se agregó el item al carrito");
+    contador();
 }
 //renderiza la Orden en el carrito
 function showOrder(){
@@ -29,6 +30,7 @@ function showOrder(){
         total = total + order.price;
         totalOrderPrice.empty();
         totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
+        contador();
     })
     //borrar  elementos por su id de la lista de orders.  event.target = this
     $('.close').click(function () {
@@ -45,6 +47,7 @@ function showOrder(){
         total = total - price;
         totalOrderPrice.empty();
         totalOrderPrice.append(`<p><strong>Total: USD ${total} </strong></p>`); 
+        contador();
     })
 }
 //vacia el carrito y limpia el localstorage
@@ -52,7 +55,8 @@ $('#btn-destroyCart').click(function(){
     orderContainer.empty();
     order = [];
     totalOrderPrice.empty();
-    localStorage.clear()
+    localStorage.clear();
+    DisplayNone();
 })
 // Funcion que llama a renderProducts.js para inyectar el html de productos y el modal
 function showProducts(products) {
@@ -65,6 +69,28 @@ function showProducts(products) {
         var indexSelection = $(event.target).data("id");
         addOrder(indexSelection);
     })
+}
+
+//contador
+function contador(){
+    var circulo = $('.circulo');
+
+    if (order.length > 0){
+        circulo.show();
+    }
+    var contadores = order.length;
+    var numeroContador = $('.number');
+    numeroContador.html(contadores)
+    console.log(contadores);
+}
+function DisplayNone(){
+    var circulo = $('.circulo');
+    if (!localStorage.getItem('order')){
+       circulo.hide(); 
+    } else {
+        circulo.show();
+    }
+
 }
 
 //inicio del documento
@@ -80,6 +106,9 @@ $(document).ready(() => {
             }).fail( function(){
             console.log('el llamado ajax falló');
         })
+    
+    contador();
+    DisplayNone();
 
     productsContainer = $('#products-container');
     orderContainer = $('#order-container');
