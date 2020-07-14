@@ -2,6 +2,8 @@ var inputSearchValue;
 var products;
 var inputSearchValue;
 var searchKey;
+var productsContainer;
+
 var order = [];
 function addOrder(index){
     order.push(products[index]);
@@ -91,6 +93,40 @@ $(document).ready(() => {
         event.preventDefault();
     getInputSearchValue();
     })
+    $('#btn-start').on('click', function(){
+        $('#start').fadeOut('fast', function(){
+            $('#start2').show('fast');
+        });
+        
+    })
+
+    $('#btn-buy').on('click', function(){
+        $('#products-container-father').hide('fast');
+        $('#search-advice').hide('fast');
+        $('#btn-buy').hide('fast');
+        $('#btn-buy2').show('fast');
+
+        $('#search-section').hide('fast',function(){
+            $('.show').show('fast');
+           
+
+        
+        });
+
+        $('#btn-buy2').on('click', function(){
+            $('#products-container-father').show('fast');
+            $('#search-advice').show('fast');
+            $('#btn-buy2').hide('fast');
+            $('#btn-buy').show('fast');
+            $('.show').hide('fast');
+            $('#search-section').show('fast')
+
+        })
+        
+     
+
+
+    })
 
 })
 // Mostrar mensaje de Ã©️xito:
@@ -116,14 +152,14 @@ inputSearch = $('#input-search');
 function getInputSearchValue() {
     var inputSearchValue = search(inputSearch.val());
     if (inputSearchValue == inputSearch.val()) {
-       return searchKeyValue(inputSearch);
+       return searchKeyValue(inputSearchValue);
     }
 
 }
 // INSERTAR EL VALOR DEL BUSCADOR EN EL HTML
 function searchKeyValue(key) {
     var searchKey = $('#search-key');
-    searchKey.html(key);
+    searchKey.append(key);
    
 }
 
@@ -140,6 +176,4 @@ function search(key) {
   
     
 }
-
-
 
