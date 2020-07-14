@@ -4,7 +4,35 @@ body{
 
 }
 
+#btn-start{
+    border-radius: 7px !important;
+  border-color: rgb(160, 157, 157) !important;
+  color: rgb(155, 155, 155) !important;
+}
+#btn-start:hover{
+    background: rgba(255, 254, 254, 0.993) !important;
+    color: rgb(0, 0, 0) !important;
+    border-color: rgba(0, 0, 0, 0.911) !important;
+    font-size: 20px;
+}
 
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .content {
+    position: fixed;
+    bottom: 15%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    margin: auto auto;
+    text-align: center;
+  }
 
 #content{
     margin: auto;
@@ -100,10 +128,15 @@ align-items: baseline;
 @media  only screen and (max-width: 767px) {
     .cart{
         position:unset !important;
+    
     }
 }
 @media  only screen and (min-width: 767px) {
     #cart-btn{
         display: none !important;
     }
+}
+
+.cc-img {
+    margin: 0 auto;
 }
