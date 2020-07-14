@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,14 +36,26 @@
       <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block " alt="Soni plai steishon">
     </div>
   </div>
-<!-- contenido -->
+  <!-- contenido -->
   <div id="start2" style="display: none;">
     <nav id="header" class="navbar sticky-top navbar-dark">
       <a class="navbar-brand" href="index.html">
         <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block align-top" alt="Soni plai steishon">
       </a>
       <a href="#carrito" class="nav-link">
-        <button id="cart-btn" class="btn btn-md "><i class="fab fa-opencart"></i></button>
+        <button id="cart-btn" class="btn btn-md ">
+
+
+          <div class="flex">
+            <i class="flexCart cart fab fa-opencart">
+              <div class="circulo flexCart" id="circulo" style="display: none;">
+                <span class="number" id="number"></span>
+              </div>
+            </i>
+          </div>
+
+          
+        </button>
       </a>
     </nav>
     <div id="search-section" class="container ">
@@ -131,7 +144,19 @@
           <div class="card">
             <section id="carrito">
               <div class="card-body">
-                <h5 class=" cart-title" style="text-align: right;">ShoppingCart<i class="fab fa-opencart"></i></h5><br>
+
+                <div class="flex">
+                  <h5 class="cart-title" style="text-align: right;">ShoppingCart
+                  </h5>
+                  <i class="flexCart cart fab fa-opencart">
+                    <div class="circulo flexCart" id="circulo" style="display: none;">
+                      <span class="number" id="number"></span>
+                    </div>
+                  </i>
+                </div>
+
+
+                <br>
                 <ul id="order-container" style="font-size: 12px;">
                   <!-- Aqui llenaríamos el carrito de productos al irbclickeando-->
                 </ul>
@@ -179,4 +204,5 @@
   <script defer src="assets/js/renderProducts.js"> </script>
   <script defer src="assets/js/main.js"> </script>
 </body>
+
 </html>
