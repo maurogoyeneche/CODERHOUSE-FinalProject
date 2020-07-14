@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Automotora dedicada a la venta de los mejores autos del mercado - Nuevos y Usados">
   <meta name="author" content="Automotora VIP">
-
-  <title>Mi Proyecto Final CODER HOUSE - JavaScript</title>
-
+  <title>Proyecto Final by Mauro Goyeneche - CODER HOUSE / JavaScript</title>
   <!-- CSS de Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
     integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
@@ -25,168 +21,142 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
   <!-- CSS Propio -->
   <link rel="stylesheet" href="assets/css/styles.css">
-
-
 </head>
 
-<body >
- <div id="start">
-<!-- The video -->
-<video autoplay muted loop id="myVideo">
-  <source src="assets/img/videobackground.mp4" type="video/mp4">
-</video>
-<div class="content">
-
-  <!-- Use a button to start the app -->
-  <button id="btn-start" type="button" class="btn btn-dark btn-outline-light btn-lg" >start</button>
-  
-  <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block " alt="Soni plai steishon">
-  
-</div>
-
- </div>
-
- <div id="start2" style="display: none;"> 
-
-
-
-  <nav id="header" class="navbar sticky-top navbar-dark">
-    <a class="navbar-brand" href="index.html">
-      <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block align-top" alt="Soni plai steishon">
-    </a>
-    <a href="#carrito" class="nav-link">
-      <button id="cart-btn" class="btn btn-md "><i class="fab fa-opencart"></i></button>
-    </a>
-  </nav>
-
-  <div id="search-section" class="container ">
-    <div id="form-search" class="form-group">
-      <form id="form-submit" action="">
-      <input type="text" id="input-search" class="form-control" aria-describedby="buscador"
-        placeholder="Ingrese el producto">
-      <button id="search-btn" type="submit" class="btn btn-dark btn-md btn-block" value="""><i class="fas fa-search"></i> BUSCAR</button>
-      </form>
+<body>
+  <div id="start">
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/img/videobackground.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <!-- Use a button to start the app -->
+      <button id="btn-start" type="button" class="btn btn-dark btn-outline-light btn-lg">start</button>
+      <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block " alt="Soni plai steishon">
     </div>
-    <p id="search-advice">Se han encontrado <span><strong></strong></span> búsquedas relacionadas con: <strong><span id="search-key">
-        </span></strong> </p>
   </div>
-
-
-  <div id="content" class="container">
-    <div class="row">
-      <div id="products-container-father" class="col-md-9">
-        <div id="products-container" class="row">
-          
-
-          <!-- AQUI IRIAN LOS PRODUCTOS -->
-          
-        </div>
+<!-- contenido -->
+  <div id="start2" style="display: none;">
+    <nav id="header" class="navbar sticky-top navbar-dark">
+      <a class="navbar-brand" href="index.html">
+        <img id="header-logo" src="assets/img/pslogo.jpg" class="d-inline-block align-top" alt="Soni plai steishon">
+      </a>
+      <a href="#carrito" class="nav-link">
+        <button id="cart-btn" class="btn btn-md "><i class="fab fa-opencart"></i></button>
+      </a>
+    </nav>
+    <div id="search-section" class="container ">
+      <div id="form-search" class="form-group">
+        <form id="form-submit" action="">
+          <input type="text" id="input-search" class="form-control" aria-describedby="buscador"
+            placeholder="Ingrese el producto">
+          <button id="search-btn" type="submit" class="btn btn-dark btn-md btn-block" value="""><i class=" fas
+            fa-search"></i> BUSCAR</button>
+        </form>
       </div>
-       <!-- CHECK OUT DISPLAY NONE -->
-  <div id="checkout-section" class="col-md-9 show" style="display: none;">
-    <div class="row">
-        <div class="col-md-12 ">
-            <div class="card ">
+      <p id="search-advice">Se han encontrado <span><strong></strong></span> búsquedas relacionadas con: <strong><span
+            id="search-key">
+          </span></strong> </p>
+    </div>
+    <div id="content" class="container">
+      <div class="row">
+        <div id="products-container-father" class="col-md-9">
+          <div id="products-container" class="row">
+            <!-- AQUI IRIAN LOS PRODUCTOS -->
+          </div>
+        </div>
+        <!-- CHECK OUT DISPLAY NONE -->
+        <div id="checkout-section" class="col-md-9 show" style="display: none;">
+          <div class="row">
+            <div class="col-md-12 ">
+              <div class="card ">
                 <div class="card-header">
-                    <div class="row">
-                        <h3 class="text-xs-center">Payment Details</h3>
-                        <img class="img-fluid cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
-                    </div>
+                  <div class="row">
+                    <h3 class="text-xs-center">Payment Details</h3>
+                    <img class="img-fluid cc-img"
+                      src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                  </div>
                 </div>
                 <div class="card-block container m-1">
-                    <form role="form">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label>CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input type="tel" class="form-control" placeholder="Valid Card Number" />
-                                        <span class=""><span class="fa fa-credit-card"></span></span>
-                                    </div>
-                                </div>
-                            </div>
+                  <form role="form">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <label>CARD NUMBER</label>
+                          <div class="input-group">
+                            <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                            <span class=""><span class="fa fa-credit-card"></span></span>
+                          </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
-                                    <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input type="tel" class="form-control" placeholder="MM / YY" />
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-md-5 float-xs-right">
-                                <div class="form-group">
-                                    <label>CV CODE</label>
-                                    <input type="tel" class="form-control" placeholder="CVC" />
-                                </div>
-                            </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-7 col-md-7">
+                        <div class="form-group">
+                          <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span>
+                            DATE</label>
+                          <input type="tel" class="form-control" placeholder="MM / YY" />
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label>CARD OWNER</label>
-                                    <input type="text" class="form-control" placeholder="Card Owner Names" />
-                                </div>
-                            </div>
+                      </div>
+                      <div class="col-xs-5 col-md-5 float-xs-right">
+                        <div class="form-group">
+                          <label>CV CODE</label>
+                          <input type="tel" class="form-control" placeholder="CVC" />
                         </div>
-                    </form>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <label>CARD OWNER</label>
+                          <input type="text" class="form-control" placeholder="Card Owner Names" />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
                 <div class="card-footer">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button class="btn btn-warning btn-lg btn-block">Process payment</button>
-                        </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button class="btn btn-warning btn-lg btn-block">Process payment</button>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-  <!-- FIN CHECK OUT -->
-
-
-
-      <div id="cart" class="col-md-3" >
-      
-        <div class="card" >
-          <section id="carrito">
-            <div  class="card-body">
-              <h5  class=" cart-title" style="text-align: right;">ShoppingCart<i class="fab fa-opencart"></i></h5><br>
-              <ul id="order-container" style="font-size: 12px;">
-                 <!-- Aqui llenaríamos el carrito de productos al irbclickeando-->
-              </ul>
-              <p id="btn-box" class="card-text">
-              <form action="">
-                <button id="btn-destroyCart" type="button" class="btn btn-outline-info btn-block btn-sm">Vaciar
-                  Carrito</button>
-                <button id="btn-buy" type="button" class="btn btn-dark  btn-block btn-sm ">Comprar</button>
-                <button id="btn-buy2" type="button" class="btn btn-info  btn-block btn-sm" style="display: none;">Agregar + Productos</button>
-                
-                <input type="text" id="discount-key" class="input-group input-group-sm mb-3 show"
-                  style="margin-top:5px; padding: 0; font-size: 10px; display:none" aria-label="15px" value="" placeholder="Ingresá tu CUPÓN DE DESCUENTO">
-              </form>
-              <div class="card-text alert-text" id="total-order-price">
-                <!-- aqui va el precio total -->
               </div>
-              
-              </p>
             </div>
- 
-     
-
-          </section>
+          </div>
         </div>
-
-
+        <!-- FIN CHECK OUT -->
+        <div id="cart" class="col-md-3">
+          <div class="card">
+            <section id="carrito">
+              <div class="card-body">
+                <h5 class=" cart-title" style="text-align: right;">ShoppingCart<i class="fab fa-opencart"></i></h5><br>
+                <ul id="order-container" style="font-size: 12px;">
+                  <!-- Aqui llenaríamos el carrito de productos al irbclickeando-->
+                </ul>
+                <p id="btn-box" class="card-text">
+                <form action="">
+                  <button id="btn-destroyCart" type="button" class="btn btn-outline-info btn-block btn-sm">Vaciar
+                    Carrito</button>
+                  <button id="btn-buy" type="button" class="btn btn-dark  btn-block btn-sm ">Comprar</button>
+                  <button id="btn-buy2" type="button" class="btn btn-info  btn-block btn-sm"
+                    style="display: none;">Agregar + Productos</button>
+                  <input type="text" id="discount-key" class="input-group input-group-sm mb-3 show"
+                    style="margin-top:5px; padding: 0; font-size: 10px; display:none" aria-label="15px" value=""
+                    placeholder="Ingresá tu CUPÓN DE DESCUENTO">
+                </form>
+                <div class="card-text alert-text" id="total-order-price">
+                  <!-- aqui va el precio total -->
+                </div>
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
-
     </div>
-
   </div>
-
-
-</div>
-
-
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -195,33 +165,18 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
-
   <!-- JS de Popper.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-
   <!-- JS de Bootstrap -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
   <!-- JS de Vue.js -->
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
   <!-- JS Personal -->
-  <!-- <script defer src="assets/js/app.js"> </script> -->
   <script defer src="assets/js/renderProducts.js"> </script>
   <script defer src="assets/js/main.js"> </script>
-  <!-- <script defer src="assets/js/data.js"> </script> -->
-  <!-- <script defer src="assets/js/products.js"> </script> -->
-  <!-- <script defer src="assets/js/ShoppingCart.js"> </script> -->
-
-
-
-
-
-
 </body>
-
 </html>
