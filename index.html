@@ -67,9 +67,9 @@
             fa-search"></i> BUSCAR</button>
         </form>
       </div>
-      <p id="search-advice">Se han encontrado <span><strong></strong></span> búsquedas relacionadas con: <strong><span
+      <!-- <p id="search-advice">Se han encontrado <span><strong></strong></span> búsquedas relacionadas con: <strong><span
             id="search-key">
-          </span></strong> </p>
+          </span></strong> </p> -->
     </div>
     <div id="content" class="container">
       <div class="row">
@@ -91,7 +91,7 @@
                   </div>
                 </div>
                 <div class="card-block container m-1">
-                  <form role="form">
+                  <form >
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="form-group">
@@ -131,7 +131,7 @@
                 <div class="card-footer">
                   <div class="row">
                     <div class="col-xs-12">
-                      <button class="btn btn-warning btn-lg btn-block">Process payment</button>
+                      <button type="submit" class="btn btn-warning btn-lg btn-block" onclick="checkOut()">Process payment</button>
                     </div>
                   </div>
                 </div>
@@ -203,6 +203,8 @@
   <!-- JS Personal -->
   <script defer src="assets/js/renderProducts.js"> </script>
   <script defer src="assets/js/main.js"> </script>
+  
 </body>
 
 </html>
+
