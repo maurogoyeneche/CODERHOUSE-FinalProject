@@ -22,8 +22,11 @@ function showOrder(){
         orderContainer.append(`
                 <li class="item" id="000${index}">
                     <div class="row">
-                        <div class="col-md-10 d-inline"> ${order.productName}  U$s${order.price} </div>
-                        <div class="col-md-2 d-inline"><button type="button" data-price="${order.price}" id="${index}" class="close" aria-label="Close"><span aria-hidden="true" style="font-size:10px"><i class="fas fa-minus-circle"></i></span></button></div>
+                        <div class="col-md-10 d-inline"> ${order.productName}  U$s${order.price}</div>
+                        <div class="col-md-2 d-inline"> 
+                         <span><a type="button" data-price="${order.price}" id="${index}" class="close d-inline" aria-label="Close"><i style="font-size:10px" class="fas fa-minus-circle"></i></a></span>
+                         </div>
+           
                     </div>
                 </li>
         `);
@@ -138,8 +141,6 @@ $(document).ready(() => {
         $('#search-section').hide('fast',function(){
             $('.show').show('fast');
            
-
-        
         });
 
         $('#btn-buy2').on('click', function(){
@@ -151,13 +152,21 @@ $(document).ready(() => {
             $('#search-section').show('fast')
 
         })
-        
-     
-
-
     })
 
+    
+    
+
 })
+
+function checkOut(){
+    checkOutContainer = $('#start');
+    $('#start2').hide('slow');
+    checkOutContainer.show('slow');
+    alert(`¡Su compra fué realizada con éxito!`);
+ 
+}
+
 // Mostrar mensaje de Ã©️xito:
 function mostrarOK(texto) {
     // Por las dudas, cerrar alert previo:
